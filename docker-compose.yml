@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   xinference:
-    image: xinference:r36.2.0-py3
+    image: lujin525/xinference:r36.2.0-py3
     runtime: nvidia
     network_mode: "host"
     ports:
