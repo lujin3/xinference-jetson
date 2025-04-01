@@ -9,7 +9,7 @@ services:
       - "9997:9997"
     volumes:
       # Replace <xinference_home> with your xinference home path on the host machine
-      - xinf:/root/.xinference
+      - ./xinf:/root/.xinference
 #      # Replace <huggingface_cache_dir> with your huggingface cache path, default is
       # <home_path>/.cache/huggingface
       # - /root/.cache/huggingface:/root/.cache/huggingface
