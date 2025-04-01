@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  xinference:
+    image: xinference:r36.2.0-py3
+    runtime: nvidia
+    network_mode: "host"
+    ports:
+      - "9997:9997"
+    volumes:
+      # Replace <xinference_home> with your xinference home path on the host machine
+      - xinf:/root/.xinference
+#      # Replace <huggingface_cache_dir> with your huggingface cache path, default is
+      # <home_path>/.cache/huggingface
+      # - /root/.cache/huggingface:/root/.cache/huggingface
+      # If models are downloaded from modelscope, replace <huggingface_cache_dir> with
+      # your modelscope cache path, default is <home_path>/.cache/modelscope
+      # - /root/.cache/modelscope:/root/.cache/modelscope
+    environment:
+      # add envs here. Here's an example, if you want to download model from modelscope
+      - XINFERENCE_MODEL_SRC=modelscope
