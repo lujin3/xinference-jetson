@@ -20,7 +20,7 @@ docker build -t xinference:r36.2.0-py3 .
 ## Run
 ```bash
 jetson-containers run \
-    -v ./xinf:/root/.xinference \
+    -v ./xinf:/root \
     -e HF_ENDPOINT=https://hf-mirror.com \
     xinference:2.1-r36.2.0 \
     xinference-local --host 0.0.0.0 --port 9997
