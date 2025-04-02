@@ -4,8 +4,9 @@ FROM nvcr.io/nvidia/l4t-ml:r36.2.0-py3
 RUN pip install --no-cache-dir \
     xinference \
     sentence-transformers \
-    -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-
+    -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple \
+    && rm -rf /root/.cache/pip/*
+    
 COPY core.py /usr/local/lib/python3.10/dist-packages/xinference/model/rerank/core.py
 
 # 暴露端口
