@@ -10,6 +10,15 @@ A Docker image for running Xinference on NVIDIA Jetson platform with GPU acceler
 
 # Usage
 ```bash
+git clone https://github.com/lujin3/xinference-jetson.git
+cd jetson-containers
+```
+## Build
+```bash
+docker build -t xinference:r36.2.0-py3 .
+```
+## Run
+```bash
 jetson-containers run \
     -v ./xinf:/root/.xinference \
     -e HF_ENDPOINT=https://hf-mirror.com \
