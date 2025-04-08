@@ -4,7 +4,7 @@ FROM dustynv/pytorch:2.1-r36.2.0
 RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
 RUN pip install --no-cache-dir \
-    xinference \
+    'xinference==v1.4.0' \
     'sentence-transformers<4.0.0' \
     'transformers==4.49.0' \
     && rm -rf /root/.cache/pip/*
